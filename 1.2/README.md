@@ -10,11 +10,15 @@
 
 ## vim make
 
-vim本身有一个make系统，`makeprg`都不需要设置，一般只需要设置`CFLAGS`，然后直接make即可。
+vim本身有一个make系统，可以通过`makeprg`来设置编译程序。
+
+不过也可以直接make，如果需要额外参数，可以通过`CFLAGS`来设置。
 
 例如：
 
 ```vim
 :let CFLAGS = '-Wall'
-:make
+:make %<.out
 ```
+
+> 注意：make后需要有输出参数才行。
